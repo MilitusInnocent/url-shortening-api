@@ -1,0 +1,159 @@
+.navbar {
+    @include flex-btwn(row);
+    align-items: center;
+    margin: 50px 8vw 75px;
+
+    &__links__container {
+        @include flex-btwn(row);
+        align-items: center;
+        flex: 1;
+        margin-left: 30px;
+
+        .navbar__links {
+            @include flex-btwn(row);
+            align-items: center;
+            color: $grayish-violet;
+            font-weight: 700;
+
+            &--main { width: 300px }
+            &--secondary { width: 155px }
+
+            .navbar__link {
+                font-size: 15px;
+                
+                &:not(.navbar__link--highlight) a {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%; bottom: 0px;
+                        height: 0.5px; width: 0;
+                        transition: 0.2s;
+                    }
+
+                    &:hover {
+                        color: $very-dark-violet;
+                        transition: .5s;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: -5%; bottom: 0px;
+                            height: 0.5px; width: 110%;
+                            background: $cyan;
+                        }
+                    }
+                }
+
+                &--highlight {
+                    border-radius: 50px;
+                    background-color: $cyan;
+                    padding: 8px 15px;
+                    color: white;
+                    cursor: pointer;
+
+                    &:hover {
+                        filter: brightness(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &--mobile {
+        display: none;
+
+        .close { display: none }
+
+        &.deployed {
+            .hamburger { display: none }
+            .close { display: block }
+        }
+    }
+
+    @media screen and (max-width: 996px) {
+        &__links__container {
+            .navbar__links {
+                .navbar__link {
+                    font-size: 13.5px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 830px) {
+        height: 55px;
+        margin: 30px 8vw;
+
+        &__links__container {
+            @include flex-btwn(column);
+            position: absolute;
+            background-color: $dark-violet;
+            width: calc(100% - 40px);
+            left: 20px; top: 100px;
+            margin-left: 0;
+            transition: .75s ease-in-out;         
+            padding: 20px 20px 30px;
+            border-radius: 10px;
+            transform: translateY(-145%);
+
+            &.deployed {
+                transform: translateY(0%);
+            }
+
+            .navbar__links {
+                @include flex-btwn(column);
+                color: white;
+                text-align: center;
+
+                &--main {
+                    margin-bottom: 10px;
+                    width: 100%
+                }
+
+                &--secondary { 
+                    border-top: 0.5px solid $grayish-violet; 
+                    padding-top: 25px;
+                    width: 100%
+                }
+
+                .navbar__link {
+                    margin-bottom: 20px;
+
+                    &:not(.navbar__link--highlight) a:hover { color: white }
+                    &--highlight { 
+                        margin-bottom: 0; 
+                        width: 100%;
+                    }                    
+                }
+            }          
+        }
+
+        &--mobile {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            top: -6px; right: -10px;
+
+            .hamburger { margin-right: 16.5px }
+
+            .close {             
+                border-radius: 50%;
+                padding: 14px 16.5px;
+                transition: .2s;
+
+                &:hover {
+                    color: white;
+                    background-color: rgba($dark-violet, 0.8);
+                }
+        
+                &.spin {
+                    transform: rotateZ(360deg);
+                    transition: transform .85s;
+                }
+            }
+        }
+    }
+}

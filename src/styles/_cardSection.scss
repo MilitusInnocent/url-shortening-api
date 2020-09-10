@@ -1,0 +1,15 @@
+.card__section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8vw;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 5px);
+        width: 100%; height: 10px;
+        background-color: $cyan;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,33 @@
+.statistics {
+    padding: 35px 8vw 100px;
+    background-color: rgba($gray, 0.25);
+
+    &__textbox {
+        width: 60%;
+        margin: 0 auto 100px;
+        text-align: center;
+
+        .statistics__heading {
+            margin-bottom: 15px;
+        }
+
+        .statistics__subheading {
+            color: $grayish-violet;
+        }
+    }
+
+    @media screen and (max-width: 870px) {
+        &__textbox {
+            .statistics {
+                &__heading { font-size: 27px; }
+                &__subheading { font-size: 15.5px; }
+            }
+        }
+    }
+
+    @media screen and (max-width: 870px) {
+        &__textbox { 
+            width: 100%;
+        }
+    }
+}

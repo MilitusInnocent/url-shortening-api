@@ -1,0 +1,64 @@
+.shortened__output {
+    @include flex-btwn(row);
+    align-items: center;
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    height: 70px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .original__URL {
+        width: 50%;
+        padding: 0 10px;
+    }
+
+    .hash-id {
+        color: $cyan;
+        margin: 0 10px 0 auto;
+    }
+
+    .btn--copy {
+        background-color: $cyan;
+        color: white;
+        font-family: inherit;
+        width: 100px; height: 100%;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 5px;
+        border: 0;
+
+        &.active {
+            background-color: $dark-violet;
+            border: 3px solid $cyan;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        @include flex-btwn(column);
+        height: max-content;
+        padding: 15px 15px 25px;
+
+        .original__URL {
+            position: relative;
+            text-align: center;
+            border-bottom: .5px solid rgba($grayish-violet, 0.75);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            width: calc(100% + 30px);
+            left: 0px;
+        }
+
+        .hash-id { 
+            margin: 0 0 10px 0;
+        }
+
+        .btn--copy {
+            width: 100%;
+            height: 50px;
+        }
+    }
+}

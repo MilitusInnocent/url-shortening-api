@@ -1,0 +1,12 @@
+@mixin flex-btwn($prop) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: $prop;
+}
+
+@mixin flex-btwn-relative($prop) {
+    position: relative;
+    display: flex;
+    flex-direction: $prop;
+    justify-content: space-between; 
+}

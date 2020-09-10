@@ -1,0 +1,35 @@
+.cta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;   
+    background-color: $dark-violet;
+
+    &__text__box {
+        text-align: center;
+        position: relative;
+        z-index: 5;
+        
+        .cta__heading {
+            margin-bottom: 30px;
+            font-size: 35px;
+            letter-spacing: 1.5px;
+            color: white;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        height: 100%; width: 100%;
+        top: 0; 
+    }
+
+    @media screen and (max-width: 500px) {
+        &__text__box {
+            .cta__heading {
+                font-size: 6.5vw;
+            }
+        }
+    }
+}

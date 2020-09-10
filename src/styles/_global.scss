@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    max-width: 1900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+}

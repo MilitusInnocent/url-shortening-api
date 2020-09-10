@@ -1,0 +1,44 @@
+.attribute__card {
+    width: calc(92% / 3);
+    height: min-content;
+    padding: 0 20px 30px;
+    background-color: white;
+    border-radius: 5px;
+
+    &:nth-of-type(2) { margin-top: 50px }
+    &:nth-of-type(3) { margin-top: 100px }
+
+    &__img__container {
+        background-color: $dark-violet;
+        display: flex;
+        height: 78px; width: 78px;
+        border-radius: 50%;
+        margin-top: -39px;
+
+        .attribute__icon {
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &__heading {
+        margin: 20px 0;
+    }
+
+    &__subheading {
+        color: $grayish-violet;
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 870px) {
+        width: 100%;
+        text-align: center;
+
+        &:nth-of-type(1) { margin-bottom: 50px }
+
+        &__img__container {
+            position: relative;
+            left: calc(50% - 39px);
+        }
+    }
+}

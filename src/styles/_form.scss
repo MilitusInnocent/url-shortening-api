@@ -1,0 +1,104 @@
+.form__section {
+    background-color: rgba($gray, 0.25);
+    margin-top: 180px;
+
+    .form--outer-shell {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        padding: 70px 50px;
+        margin: 0 8vw;
+        transform: translateY(-100px);
+        background-color: $dark-violet;
+
+        .form__bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        .form {
+            @include flex-btwn-relative(row);
+            z-index: 5;
+            width: 100%;
+
+            &__control {
+                &--input {
+                    width: 77%;
+                    padding: 15px 20px;
+                    font-size: 20px;
+                    font-family: inherit;
+                    border-radius: 5px;
+                    border: 0;
+                    color: black;
+
+                    ::placeholder {
+                        font-family: inherit;
+                        color: $gray;
+                    }
+
+                    &.error {
+                        border: 2px solid $red;
+                    }
+                }
+
+                &--button {
+                    width: 20%;
+                    border: 0;
+                    font-family: inherit;
+                    background-color: $cyan;
+                    font-weight: 700;
+                    color: white;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    padding: 15px 0;
+                }
+
+                &--small {
+                    position: absolute;
+                    display: none;
+                    bottom: -25px;
+                    padding-left: 20px;
+                    font-style: italic;
+                    color: $red;
+
+                    &.error {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .form__output {
+        position: relative;
+        margin: 0px 8vw;
+        top: -75px;
+
+        @media screen and (max-width: 800px) {
+            top: -60px;
+        }
+    }
+
+    @media screen and (max-width: 821px) {
+        .form--outer-shell {
+            padding: 25px 20px;
+
+            .form {
+                @include flex-btwn-relative(column);
+                & > * { width: 100% }
+
+                &__control {
+                    &--input { margin-bottom: 35px }
+                    &--small { bottom: 65px }
+                }                
+            }
+        }   
+    }
+
+    @media screen and (max-width: 500px) {
+        .form--outer-shell {
+            .form__control--input { font-size: 16px }  
+        }
+    }
+}

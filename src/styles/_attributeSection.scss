@@ -1,0 +1,21 @@
+.attribute__section {
+    @include flex-btwn-relative(row);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 5px);
+        width: 100%; height: 10px;
+        background-color: $cyan;
+        z-index: -1;
+    }
+
+    @media screen and (max-width: 870px){
+        @include flex-btwn-relative(column);
+
+        &::after {
+            width: 10px; height: 100%;
+            top: 0; left: calc(50% - 5px);
+        }
+    }
+}
