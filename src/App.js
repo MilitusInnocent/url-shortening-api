@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Header, Form, Statistics, CTA, Footer } from './components';
 import './App.scss';
 
+
 function App() {
   const [viewportSize, setViewportSize] = useState(window.innerWidth);
 
